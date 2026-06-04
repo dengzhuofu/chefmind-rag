@@ -1,0 +1,342 @@
+﻿{
+    "request_id":  "ec6dc37d-e173-449d-9c67-76358d598ce1",
+    "answer":  "æ ¹æ®ç°æé£è°±åºï¼æ æ³åç­æ­¤é®é¢ãè¯·å°è¯æ¢ä¸ªé®é¢ææä¾æ´å¤ç»èã",
+    "citations":  [
+
+                  ],
+    "has_related_content":  false,
+    "refused":  true,
+    "pipeline_debug":  {
+                           "query_type":  "general",
+                           "query_weights":  {
+                                                 "semantic":  0.5,
+                                                 "bm25":  0.5
+                                             },
+                           "rewritten_queries":  [
+
+                                                 ],
+                           "retrieval_count":  30,
+                           "retrieval_results":  [
+                                                     {
+                                                         "chunk_id":  "rec_9a094f26_image_0",
+                                                         "score":  0.0082,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "éæ±¤å",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãéæ±¤åãæåå¾ï¼éæ±¤åçæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./gin-tonic.jpg"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_d0010c48_tip",
+                                                         "score":  0.0082,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "åç²",
+                                                         "chunk_type":  "tip",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãåç²ã[é¾åº¦ï¼ä¸­ç­ | çº¦45åé]\nå°è´´å£«ï¼\nåè: [å¶ä½åç²çè¯¦ç»æ­¥éª¤](https://www.zhms.cn/recipe/mzvyy.html?source=2)"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_f584ce40_image_2",
+                                                         "score":  0.0081,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "èæ±è",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãèæ±èãæåå¾ï¼èæ±èçæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./3.jpeg"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_7df101a7_tip",
+                                                         "score":  0.0081,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "æ°´ç\u0085®çè",
+                                                         "chunk_type":  "tip",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãæ°´ç\u0085®çèã[é¾åº¦ï¼ä¸­ç­ | çº¦60åé]\nå°è´´å£«ï¼\nåè: [æ°´ç\u0085®çèçè¯¦ç»æ­¥éª¤](https://www.zhms.cn/recipe/blrqm.html?source=2)"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_409dacaf_image_0",
+                                                         "score":  0.0079,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "æ æª¬æ°´",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãæ æª¬æ°´ãæåå¾ï¼æ æª¬æ°´çæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./æ æª¬æ°´.jpg"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_2a7576aa_image_0",
+                                                         "score":  0.0079,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "å®ç¾æ°´ç\u0085®è",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãå®ç¾æ°´ç\u0085®èãæåå¾ï¼å®ç¾æ°´ç\u0085®èçæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼https://img-s-msn-com.akamaized.net/tenant/amp/entityid/AA1yBdnK.img?w=768\u0026h=512\u0026m=6"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_cc2754fe_image_0",
+                                                         "score":  0.0078,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "ç¤ºä¾è",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãç¤ºä¾èãæåå¾ï¼ç¤ºä¾èçæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./ç¤ºä¾è.jpg"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_acc70642_tip",
+                                                         "score":  0.0078,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "é±¼é¦èå­",
+                                                         "chunk_type":  "tip",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãé±¼é¦èå­ã[é¾åº¦ï¼ä¸­ç­ | çº¦45åé]\nå°è´´å£«ï¼\nèå­çä¸ªäººåå¥½ï¼å¯ä»¥å»ç®ï¼èæ²«ä¹å¯ä»¥å¤æ¾ä¸ç¹ã\nåè: [é±¼é¦èå­è¯¦ç»æ­¥éª¤](https://www.zhms.cn/recipe/kbbrl.html?source=2)"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_1efaa455_image_0",
+                                                         "score":  0.0077,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "éè²å£«",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãéè²å£«ãæåå¾ï¼éè²å£«çæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./gin-fizz.jpg"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_d43b1b8c_tip",
+                                                         "score":  0.0077,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "å¬çé\u0085¿è",
+                                                         "chunk_type":  "tip",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãå¬çé\u0085¿èã[é¾åº¦ï¼å°é¾ | çº¦60åé]\nå°è´´å£«ï¼\næä½æ¶ï¼æ¿åºå¬çé\u0085¿èæ¶æ³¨æç¢å­å¾ç«ï¼å°å¿æä½ã\nåèèµæï¼[bç«è§é¢](https://www.bilibili.com/video/BV1oF411F7wD?spm_id_from=333.337.search-card.all.click\u0026vd_source=9f568660d497311d3f945e5dce319705)"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_a2f9fbf3_image_0",
+                                                         "score":  0.0076,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "è±å¼å¸åº·",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãè±å¼å¸åº·ãæåå¾ï¼è±å¼å¸åº·çæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./è±å¼å¸åº·.png"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_e22ef31d_tip",
+                                                         "score":  0.0076,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "æ éª¨é¸¡çª",
+                                                         "chunk_type":  "tip",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãæ éª¨é¸¡çªã[é¾åº¦ï¼å°é¾ | çº¦60åé]\nå°è´´å£«ï¼\næä½æ¶ï¼éè¦æ³¨æè§å¯æ²¸è\u0085¾çæ°´ä½çº¿ï¼å¦åç°ä½äº 3/4 çé£æåºå ç­æ°´è³æ²¡è¿é£æã\né¸¡çªå»éª¨æç¨ ï¼[bili_89324373958](https://www.bilibili.com/video/BV1t44y117D8?share_source=copy_web)"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_8541f7a3_image_1",
+                                                         "score":  0.0075,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "æ²¹æ³¼è¾£å­",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãæ²¹æ³¼è¾£å­ãæåå¾ï¼æ²¹æ³¼è¾£å­çæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./æ²¹æ³¼è¾£å­.jpg"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_a3ed0d7f_tip",
+                                                         "score":  0.0075,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "ä¹¡æå¤é\u0085é¸­",
+                                                         "chunk_type":  "tip",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãä¹¡æå¤é\u0085é¸­ã[é¾åº¦ï¼å°é¾ | çº¦60åé]\nå°è´´å£«ï¼\næä½æ¶ï¼éè¦æ³¨æè§å¯æ²¸è\u0085¾çæ°´ä½çº¿ï¼å¦åç°ä½äº 2/3 çé£æåºå ç­æ°´æè\u0085å å¤é\u0085ã\n[å¨å¸é¿ï¼ç¨åç¶ç§âä¹¡æå¤é\u0085é¸­âï¼å³éå®é¸å¾ä¸æäº](https://www.bilibili.com/video/BV1R4411u7po?spm_id_from=333.999.0.0)"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_6664f250_image_0",
+                                                         "score":  0.0074,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "çé¥¼",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãçé¥¼ãæåå¾ï¼çé¥¼çæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./æå.jpg"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_43a1d1c9_tip",
+                                                         "score":  0.0074,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "çæ±ä¸¸å­æ±¤",
+                                                         "chunk_type":  "tip",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãçæ±ä¸¸å­æ±¤ã[é¾åº¦ï¼å°é¾ | çº¦60åé]\nå°è´´å£«ï¼\nåèæ¥èªï¼[çæ±ä¸¸å­æ±¤ï¼åçå°±æ¯ä¸ä¸ªé²ãå«©ãå¼¹ï¼å­¦ä¼æä¸¸å­çè¿äºæå·§ï¼è¿ç¢æ±¤æå°é](https://www.bilibili.com/video/BV1Ga411C7zg?spm_id_from=333.1007.top_right_bar_window_history.content.click)\nè¾£æ¤æ²¹å¯ä»¥æ ¹æ®å£å³æ¾"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_015fd299_image_0",
+                                                         "score":  0.0072,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "å¥å¼æè èç¹è°",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãå¥å¼æè èç¹è°ãæåå¾ï¼å¥å¼æè èç¹è°çæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼kiwi-example.jpg"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_3302fffa_tip",
+                                                         "score":  0.0072,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "æç«¹ç¾è\u0085©ç\u0085²",
+                                                         "chunk_type":  "tip",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãæç«¹ç¾è\u0085©ç\u0085²ã[é¾åº¦ï¼å°é¾ | çº¦60åé]\nå°è´´å£«ï¼\næ­¤èå±äºç²¤èï¼æ­£å®åæ³å¤ä¼æ·»å é©¬è¹ãèèå°èåéèåææç±ï¼ä¹å¯æ ¹æ®ä¸ªäººå£å³æ¿æ¢æåè±ãèåç­å\u0085¶ä»é£æ\nåèèµæï¼[æç«¹ç¾è\u0085©ç\u0085² Lamb Stew with Bean Curd Sheet [by é»Cook Guide]](https://www.youtube.com/watch?v=ThVDpVoToDQ)"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_0ce1e1de_image_2",
+                                                         "score":  0.0071,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "èæ ¼å\u0085°è",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãèæ ¼å\u0085°èãæåå¾ï¼èæ ¼å\u0085°èçæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./egg3.png"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_28d88057_tip",
+                                                         "score":  0.0071,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "çªç®å»",
+                                                         "chunk_type":  "tip",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãçªç®å»ã[é¾åº¦ï¼å°é¾ | çº¦30åé]\nå°è´´å£«ï¼\næä½æ¶ï¼éè¦æ³¨æï¼åçªç®å»ï¼ç´æ¥ä¸é\u0085ç\u0085®å°±âåºâäºï¼ä¹æ¯æå¿è®³çï¼ä¸å®è¦ç¨ç½éåçä¸æ­ææ´çªç®ï¼è¿æ ·ä¿è¯ç\u0085®å¥½ççªç®æ¶è¹åéï¼èä¸è¿æ²¡è\u0085¥å³\nåèèµæï¼[é­å¥è¯´ç¾é£](https://www.bilibili.com/video/BV1hh41117TL?spm_id_from=333.999.0.0)"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_d0010c48_image_10",
+                                                         "score":  0.007,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "åç²",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãåç²ãæåå¾ï¼åç²çæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./lf11.jpg"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_b9f6aa05_tip",
+                                                         "score":  0.007,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "æ°´ç\u0085®é±¼",
+                                                         "chunk_type":  "tip",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãæ°´ç\u0085®é±¼ã[é¾åº¦ï¼å°é¾ | çº¦60åé]\nå°è´´å£«ï¼\nå«åºçè¬èç»ååç¨éå¯èªç±åæ¥ï¼ä½éè¦æ³¨æåç§è¬èçç¹ç¹ï¼æ¯å¦æ¹æåè±çæ¶åï¼éè¦å°åè±ç/åè±åç\u0085®çï¼å¯ä»¥ç¨ç­·å­æ³ä¸æ³ç¡®è®¤ï¼ã\nçº¢æ²¹è±ç£é\u0085±ï¼è¾£åº¦ï¼ä»¥åççç¨éå¯æ ¹æ®ä¸ªäººå£å³è°æ´ã\næ³¨æåé±¼ççæ¶åå¯ä»¥åç´äºé±¼çé¿æ¡çæ¹åå\u0085åæ 5cm çé±¼åï¼ç¶åç¿»è½¬ 90 åº¦æçææèçã\n[è\u0085å¶](../../tips/learn/å­¦ä¹ è\u0085.md)çæ¶åæ³¨æ"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_40fd6782_image_0",
+                                                         "score":  0.0069,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "é¾èè",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãé¾èèãæåå¾ï¼é¾èèçæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./é¾èèæå.jpg"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_88374162_tip",
+                                                         "score":  0.0069,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "è\u0085å\u0085«ç²¥",
+                                                         "chunk_type":  "tip",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãè\u0085å\u0085«ç²¥ã[é¾åº¦ï¼å°é¾ | çº¦30åé]\nå°è´´å£«ï¼\nå¾ç²¥é\u0085å å\u0085¥é£ææ¶ï¼åºå½è¿è¡æ\u0085æï¼ä½¿é£æåæåååå¸å¨åå¤ï¼å¹¶æ³¨æè§å¯æ°´ä½çº¿ï¼å¦åç°æ°´ä½çº¿ä½äºç±³çº¿åé£æåºç«å³è¡¥æ°´ã\næ³¨ææ§å¶ç«åï¼ä¸è¦è¿å¤§ï¼å®æ¶æ\u0085æãå¦æä½¿ç¨æ®éé\u0085ï¼å»ºè®®ç§å¼æ°´ååä¸åæï¼æ\u0085æå°åæ¬¡ç§å¼æ¹å°ç«ï¼é¿å\u0085é\u0085åºç§ç³ãå¦æææ¡ä»¶ï¼å»ºè®®æ¹ç¨é«åé\u0085æç²¥é\u0085ã\nåèèµæï¼[å\u0085¨ç½ææ­£å®è\u0085å\u0085«ç²¥åæ³ï¼é¦çè½¯ç³¯ä¸æ¬¡æåï¼\\_åå©åå©\\_bilibili]("
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_17c144ac_image_3",
+                                                         "score":  0.0068,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "æä¸åè±",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãæä¸åè±ãæåå¾ï¼æä¸åè±çæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./4.jpeg"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_9a094f26_tip",
+                                                         "score":  0.0068,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "éæ±¤å",
+                                                         "chunk_type":  "tip",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãéæ±¤åã[é¾åº¦ï¼ç®å | çº¦60åé]\nå°è´´å£«ï¼\n### æå\n![gin-tonic](./gin-tonic.jpg)"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_31857c5b_image_0",
+                                                         "score":  0.0067,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "æ±éæ±¤",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãæ±éæ±¤ãæåå¾ï¼æ±éæ±¤çæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./æ±éæ±¤.jpg"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_19d112d9_image_0",
+                                                         "score":  0.0066,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "éªè±é\u0085¥",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãéªè±é\u0085¥ãæåå¾ï¼éªè±é\u0085¥çæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./éªè±é\u0085¥æå.jpg"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_a2c69344_image_0",
+                                                         "score":  0.0065,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "å°å«çè",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãå°å«çèãæåå¾ï¼å°å«çèçæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./å°å«çè.jpg"
+                                                     },
+                                                     {
+                                                         "chunk_id":  "rec_d2ffc321_image_0",
+                                                         "score":  0.0064,
+                                                         "source":  "hybrid",
+                                                         "recipe_title":  "é¸¡èç¾¹",
+                                                         "chunk_type":  "image_desc",
+                                                         "step_number":  0,
+                                                         "content_preview":  "ãé¸¡èç¾¹ãæåå¾ï¼é¸¡èç¾¹çæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./é¸¡èç¾¹.jpg"
+                                                     }
+                                                 ],
+                           "rerank_results":  [
+                                                  {
+                                                      "chunk_id":  "rec_88374162_tip",
+                                                      "score":  0.0021,
+                                                      "source":  "hybrid",
+                                                      "recipe_title":  "è\u0085å\u0085«ç²¥",
+                                                      "chunk_type":  "tip",
+                                                      "step_number":  0,
+                                                      "content_preview":  "ãè\u0085å\u0085«ç²¥ã[é¾åº¦ï¼å°é¾ | çº¦30åé]\nå°è´´å£«ï¼\nå¾ç²¥é\u0085å å\u0085¥é£ææ¶ï¼åºå½è¿è¡æ\u0085æï¼ä½¿é£æåæåååå¸å¨åå¤ï¼å¹¶æ³¨æè§å¯æ°´ä½çº¿ï¼å¦åç°æ°´ä½çº¿ä½äºç±³çº¿åé£æåºç«å³è¡¥æ°´ã\næ³¨ææ§å¶ç«åï¼ä¸è¦è¿å¤§ï¼å®æ¶æ\u0085æãå¦æä½¿ç¨æ®éé\u0085ï¼å»ºè®®ç§å¼æ°´ååä¸åæï¼æ\u0085æå°åæ¬¡ç§å¼æ¹å°ç«ï¼é¿å\u0085é\u0085åºç§ç³ãå¦æææ¡ä»¶ï¼å»ºè®®æ¹ç¨é«åé\u0085æç²¥é\u0085ã\nåèèµæï¼[å\u0085¨ç½ææ­£å®è\u0085å\u0085«ç²¥åæ³ï¼é¦çè½¯ç³¯ä¸æ¬¡æåï¼\\_åå©åå©\\_bilibili]("
+                                                  },
+                                                  {
+                                                      "chunk_id":  "rec_9a094f26_tip",
+                                                      "score":  0.0015,
+                                                      "source":  "hybrid",
+                                                      "recipe_title":  "éæ±¤å",
+                                                      "chunk_type":  "tip",
+                                                      "step_number":  0,
+                                                      "content_preview":  "ãéæ±¤åã[é¾åº¦ï¼ç®å | çº¦60åé]\nå°è´´å£«ï¼\n### æå\n![gin-tonic](./gin-tonic.jpg)"
+                                                  },
+                                                  {
+                                                      "chunk_id":  "rec_a2c69344_image_0",
+                                                      "score":  0.0011,
+                                                      "source":  "hybrid",
+                                                      "recipe_title":  "å°å«çè",
+                                                      "chunk_type":  "image_desc",
+                                                      "step_number":  0,
+                                                      "content_preview":  "ãå°å«çèãæåå¾ï¼å°å«çèçæåå±ç¤ºå¾\nå¾çè·¯å¾ï¼./å°å«çè.jpg"
+                                                  },
+                                                  {
+                                                      "chunk_id":  "rec_a3ed0d7f_tip",
+                                                      "score":  0.0011,
+                                                      "source":  "hybrid",
+                                                      "recipe_title":  "ä¹¡æå¤é\u0085é¸­",
+                                                      "chunk_type":  "tip",
+                                                      "step_number":  0,
+                                                      "content_preview":  "ãä¹¡æå¤é\u0085é¸­ã[é¾åº¦ï¼å°é¾ | çº¦60åé]\nå°è´´å£«ï¼\næä½æ¶ï¼éè¦æ³¨æè§å¯æ²¸è\u0085¾çæ°´ä½çº¿ï¼å¦åç°ä½äº 2/3 çé£æåºå ç­æ°´æè\u0085å å¤é\u0085ã\n[å¨å¸é¿ï¼ç¨åç¶ç§âä¹¡æå¤é\u0085é¸­âï¼å³éå®é¸å¾ä¸æäº](https://www.bilibili.com/video/BV1R4411u7po?spm_id_from=333.999.0.0)"
+                                                  },
+                                                  {
+                                                      "chunk_id":  "rec_acc70642_tip",
+                                                      "score":  0.0009,
+                                                      "source":  "hybrid",
+                                                      "recipe_title":  "é±¼é¦èå­",
+                                                      "chunk_type":  "tip",
+                                                      "step_number":  0,
+                                                      "content_preview":  "ãé±¼é¦èå­ã[é¾åº¦ï¼ä¸­ç­ | çº¦45åé]\nå°è´´å£«ï¼\nèå­çä¸ªäººåå¥½ï¼å¯ä»¥å»ç®ï¼èæ²«ä¹å¯ä»¥å¤æ¾ä¸ç¹ã\nåè: [é±¼é¦èå­è¯¦ç»æ­¥éª¤](https://www.zhms.cn/recipe/kbbrl.html?source=2)"
+                                                  }
+                                              ],
+                           "has_related_content":  false,
+                           "generation_time_ms":  0,
+                           "total_time_ms":  30565
+                       }
+}

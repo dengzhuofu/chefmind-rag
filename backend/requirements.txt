@@ -1,0 +1,54 @@
+# ==================== 核心框架 ====================
+fastapi==0.115.6
+uvicorn[standard]==0.34.0
+pydantic==2.10.3
+pydantic-settings==2.7.0
+
+# ==================== LangChain 生态 ====================
+langchain==0.3.13
+langchain-core==0.3.28
+langchain-community==0.3.13
+langchain-openai==0.2.14
+langchain-text-splitters==0.3.4
+
+# ==================== 向量数据库 ====================
+pymilvus==2.4.9
+milvus-model==0.2.8
+
+# ==================== 数据库 ====================
+sqlalchemy==2.0.36
+asyncpg==0.30.0
+aiosqlite==0.20.0
+alembic==1.14.0
+
+# ==================== Redis & Celery ====================
+redis==5.2.1
+celery==5.4.0
+
+# ==================== 对象存储 ====================
+minio==7.2.12
+
+# ==================== 嵌入与重排序模型 ====================
+sentence-transformers==3.3.1
+transformers==4.47.0
+torch==2.5.1
+FlagEmbedding==1.2.10
+
+# ==================== 文档处理 ====================
+unstructured==0.16.10
+pymupdf==1.25.1
+python-multipart==0.0.20
+
+# ==================== 多模态处理 ====================
+openai==1.58.1
+httpx==0.28.1
+
+# ==================== 日志与监控 ====================
+structlog==24.4.0
+prometheus-client==0.21.1
+
+# ==================== 工具库 ====================
+python-dotenv==1.0.1
+tenacity==9.0.0
+numpy==1.26.4
+tiktoken==0.8.0

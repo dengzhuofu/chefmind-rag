@@ -1,0 +1,338 @@
+{
+  "request_id": "0bb281ea-591a-484e-89ce-84370529609a",
+  "answer": "根据现有食谱库，无法回答此问题。请尝试换个问题或提供更多细节。",
+  "citations": [],
+  "has_related_content": false,
+  "refused": true,
+  "pipeline_debug": {
+    "query_type": "general",
+    "query_weights": {
+      "semantic": 0.5,
+      "bm25": 0.5
+    },
+    "rewritten_queries": [],
+    "retrieval_count": 30,
+    "retrieval_results": [
+      {
+        "chunk_id": "rec_a581634e_ingredient_all",
+        "score": 0.0082,
+        "source": "hybrid",
+        "recipe_title": "洋葱炒猪肉",
+        "chunk_type": "ingredient",
+        "step_number": 0,
+        "content_preview": "《洋葱炒猪肉》[难度：中等 | 约30分钟]\n食材：\n- 洋葱 一颗 （是主角，喜欢吃洋葱可以多半颗～一颗）\n- 猪肉 (250g)\n- 蒜头 （3 瓣）\n- 食用油 (15ml)\n- 黑胡椒 (1.25g)\n- 酱油 (30ml)\n- 糖 (15g)\n- 麻油 (5ml)\n- 番茄酱 (15ml)\n- 料酒 (15ml)"
+      },
+      {
+        "chunk_id": "rec_d0e44d43_tip",
+        "score": 0.0082,
+        "source": "hybrid",
+        "recipe_title": "凉拌鸡丝",
+        "chunk_type": "tip",
+        "step_number": 0,
+        "content_preview": "《凉拌鸡丝》[难度：中等 | 约60分钟]\n小贴士：\n这道菜是隔离期间用现有材料做的，有条件可以加入香菜、小葱等进行调味，喜欢吃辣的可以加入辣椒油"
+      },
+      {
+        "chunk_id": "rec_a581634e_step_2",
+        "score": 0.0081,
+        "source": "hybrid",
+        "recipe_title": "洋葱炒猪肉",
+        "chunk_type": "step",
+        "step_number": 2,
+        "content_preview": "《洋葱炒猪肉》[难度：中等 | 约30分钟]\n食材：洋葱 一颗, 猪肉, 蒜头, 食用油, 黑胡椒, 酱油, 糖, 麻油, 番茄酱, 料酒\n\n步骤 2：炒锅内倒入 1 大匙食用油（等待 10 秒让油温升高），倒入猪肉\n用到的食材：猪肉, 食用油"
+      },
+      {
+        "chunk_id": "rec_002791b8_tip",
+        "score": 0.0081,
+        "source": "hybrid",
+        "recipe_title": "葱油桂鱼",
+        "chunk_type": "tip",
+        "step_number": 0,
+        "content_preview": "《葱油桂鱼》[难度：困难 | 约60分钟]\n小贴士：\n经过若干次测试，成功率 100%，这道菜容错性很高，无论是什么省份、什么口味的人都能兼容。另外，本套教程虽然叫葱油桂鱼的做法，但原料本身不仅限于桂鱼，可以用鲈鱼、多宝鱼等海鱼代替（淡水鱼本身寄生虫会比海鱼多一点，不建议使用淡水鱼，淡水鱼的做法请参考《红烧鱼》等教程），耦合性低、可扩展性强。"
+      },
+      {
+        "chunk_id": "rec_a581634e_step_1",
+        "score": 0.0079,
+        "source": "hybrid",
+        "recipe_title": "洋葱炒猪肉",
+        "chunk_type": "step",
+        "step_number": 1,
+        "content_preview": "《洋葱炒猪肉》[难度：中等 | 约30分钟]\n食材：洋葱 一颗, 猪肉, 蒜头, 食用油, 黑胡椒, 酱油, 糖, 麻油, 番茄酱, 料酒\n\n步骤 1：洋葱切片，猪肉，蒜头拍碎，以及混合上述调味料备用\n用到的食材：洋葱, 猪肉, 蒜头"
+      },
+      {
+        "chunk_id": "rec_1ef000d7_tip",
+        "score": 0.0079,
+        "source": "hybrid",
+        "recipe_title": "扬州炒饭",
+        "chunk_type": "tip",
+        "step_number": 0,
+        "content_preview": "《扬州炒饭》[难度：困难 | 约60分钟]\n小贴士：\n如做完后胳膊酸痛为正常现象，需加强上肢锻炼\n超市有青豆，胡萝卜，玉米粒的混合冷冻包装，可以使用这个省去切丁的烦恼，推荐 Pams Mixed Veges 很便宜，或者类似的都可以用（如下图）\n![Pams Mixed Veges](./veg.png)"
+      },
+      {
+        "chunk_id": "rec_0cc027f2_step_7",
+        "score": 0.0078,
+        "source": "hybrid",
+        "recipe_title": "黄瓜炒肉",
+        "chunk_type": "step",
+        "step_number": 7,
+        "content_preview": "《黄瓜炒肉》[难度：中等 | 约45分钟]\n食材：黄瓜 = 100 克 * 份数, 猪肉 = 50 克 * 份数, 油量 = 50 克 * 份数, 盐量 = 10 克 * 份数, 酱油 = 5 克 * 份数, 蒜瓣 = 2 瓣 * 份数, 小米辣 = 1 根 * 份数\n\n步骤 7：放入腌制好的猪瘦肉，翻炒至肉熟变色"
+      },
+      {
+        "chunk_id": "rec_16b69a01_tip",
+        "score": 0.0078,
+        "source": "hybrid",
+        "recipe_title": "猪肉烩酸菜",
+        "chunk_type": "tip",
+        "step_number": 0,
+        "content_preview": "《猪肉烩酸菜》[难度：困难 | 约60分钟]\n小贴士：\n大火收汤时，注意不要糊锅，可以适当翻动来检查水位。\n调味的技巧，最后加盐时，可以一点一点加入，搅拌后品尝味道，直到可以接受的口味\n本菜品有酸菜的特殊风味"
+      },
+      {
+        "chunk_id": "rec_a581634e_step_5",
+        "score": 0.0077,
+        "source": "hybrid",
+        "recipe_title": "洋葱炒猪肉",
+        "chunk_type": "step",
+        "step_number": 5,
+        "content_preview": "《洋葱炒猪肉》[难度：中等 | 约30分钟]\n食材：洋葱 一颗, 猪肉, 蒜头, 食用油, 黑胡椒, 酱油, 糖, 麻油, 番茄酱, 料酒\n\n步骤 5：下刚盛起备用的猪肉翻炒至猪肉熟后\n用到的食材：猪肉"
+      },
+      {
+        "chunk_id": "rec_32d55a68_tip",
+        "score": 0.0077,
+        "source": "hybrid",
+        "recipe_title": "白菜猪肉炖粉条",
+        "chunk_type": "tip",
+        "step_number": 0,
+        "content_preview": "《白菜猪肉炖粉条》[难度：中等 | 约60分钟]\n小贴士：\n土豆干粉条煮制时间长，可以放在第一步，期间进行其他步骤\n最后一步尝味，如果发现有味道淡、未熟，继续加盖煮一段时间"
+      },
+      {
+        "chunk_id": "rec_0cc027f2_step_1",
+        "score": 0.0076,
+        "source": "hybrid",
+        "recipe_title": "黄瓜炒肉",
+        "chunk_type": "step",
+        "step_number": 1,
+        "content_preview": "《黄瓜炒肉》[难度：中等 | 约45分钟]\n食材：黄瓜 = 100 克 * 份数, 猪肉 = 50 克 * 份数, 油量 = 50 克 * 份数, 盐量 = 10 克 * 份数, 酱油 = 5 克 * 份数, 蒜瓣 = 2 瓣 * 份数, 小米辣 = 1 根 * 份数\n\n步骤 1：将猪瘦肉切片，放入碗中，倒入食用油 10 克，生抽，搅拌均匀，腌制 10 分钟"
+      },
+      {
+        "chunk_id": "rec_32d55a68_step_1",
+        "score": 0.0076,
+        "source": "hybrid",
+        "recipe_title": "白菜猪肉炖粉条",
+        "chunk_type": "step",
+        "step_number": 1,
+        "content_preview": "《白菜猪肉炖粉条》[难度：中等 | 约60分钟]\n食材：五花肉 300g, 大白菜 500g, 土豆干粉条 50g, 十三香 10g, 鸡精 5g, 食用盐 15g, 老抽 5ml, 生抽 5ml\n\n步骤 1：锅内烧水，水开后放入干粉条，煮 5 分钟后同水一起倒出容器中，盖上盖子继续浸泡泡 备用（第一步先做这个，期间可以进行以下步骤）"
+      },
+      {
+        "chunk_id": "rec_608caac3_step_4",
+        "score": 0.0075,
+        "source": "hybrid",
+        "recipe_title": "辣椒炒肉",
+        "chunk_type": "step",
+        "step_number": 4,
+        "content_preview": "《辣椒炒肉》[难度：中等 | 约45分钟]\n食材：青椒的数量 = 份数 * 3 个。, 肉量 = 份数 * 200g。, 盐量 = 份数 * 3g。, 生抽 = 份数 * 3ml。, 蚝油 = 份数 * 3ml。, 大蒜 = 份数 * 5g。, 生姜 = 份数 * 5g。, 酱油 = 份数 * 2ml。, 豆豉 = 份数 * 3g。\n\n步骤 4：将切好的`猪肉`洗净，放入空碗，再加入计算好的`生抽"
+      },
+      {
+        "chunk_id": "rec_ea02e9e7_tip",
+        "score": 0.0075,
+        "source": "hybrid",
+        "recipe_title": "酱排骨",
+        "chunk_type": "tip",
+        "step_number": 0,
+        "content_preview": "《酱排骨》[难度：困难 | 约30分钟]\n小贴士：\n增加味道的可以考虑加入豆瓣酱、番茄酱等\n大火煮时间可以根据每个人情况做调整\n煮排骨期间，可以顺道放入 2-3 个 鸡蛋一起煮，做成简易版卤蛋"
+      },
+      {
+        "chunk_id": "rec_a581634e_step_3",
+        "score": 0.0074,
+        "source": "hybrid",
+        "recipe_title": "洋葱炒猪肉",
+        "chunk_type": "step",
+        "step_number": 3,
+        "content_preview": "《洋葱炒猪肉》[难度：中等 | 约30分钟]\n食材：洋葱 一颗, 猪肉, 蒜头, 食用油, 黑胡椒, 酱油, 糖, 麻油, 番茄酱, 料酒\n\n步骤 3：炒至变色后下蒜头炒香盛起备用\n用到的食材：蒜头"
+      },
+      {
+        "chunk_id": "rec_a7581343_tip",
+        "score": 0.0074,
+        "source": "hybrid",
+        "recipe_title": "蒲烧茄子",
+        "chunk_type": "tip",
+        "step_number": 0,
+        "content_preview": "《蒲烧茄子》[难度：中等 | 约45分钟]\n小贴士：\n这个蒲焼き其实很中国，日式的蒲烧其实是烤的。\n灵魂其实在于蒲烧汁？也可以买现成的蒲烧汁。\n如果觉得腻可以在装盘后撒点切成 2~5 mm 的小葱，颜色搭配上也能不那么单调。\n炒茄子（鱼香茄子、酱爆茄子）墙裂推荐浙茄，细长所以切成滚刀块刚刚好，皮很嫩不像这里需要去皮，茄子的味道适中。"
+      },
+      {
+        "chunk_id": "rec_d43b1b8c_step_4",
+        "score": 0.0072,
+        "source": "hybrid",
+        "recipe_title": "冬瓜酿肉",
+        "chunk_type": "step",
+        "step_number": 4,
+        "content_preview": "《冬瓜酿肉》[难度：困难 | 约60分钟]\n食材：猪肉末 300g, 鸡蛋 1 个, 冬瓜 200g, 葱花, 胡椒粉 5g, 生抽 10ml, 淀粉 5g, 水淀粉 25g, 葱姜末, 盐 20g\n\n步骤 4：使用筷子在肉末中进行顺时针搅拌，搅拌到食材颜色没有明显对比（约 2 分钟）"
+      },
+      {
+        "chunk_id": "rec_2d6cfb54_tip",
+        "score": 0.0072,
+        "source": "hybrid",
+        "recipe_title": "戚风蛋糕",
+        "chunk_type": "tip",
+        "step_number": 0,
+        "content_preview": "《戚风蛋糕》[难度：困难 | 约60分钟]\n小贴士：\n参考了以下教程，文中说明非常详细且有每一步骤的配图。同时，对于为什么做某一个操作、背后的原理也有阐释，以及出现某些问题的分析：\n[为了做好这个戚风蛋糕，用了一整箱鸡蛋，从此告别凹底和塌陷](https://zhuanlan.zhihu.com/p/86865919)\n对戚风蛋糕而言，蛋清打发是次要问题，关键是**烤制时的温度和时间**。\n蛋清容"
+      },
+      {
+        "chunk_id": "rec_d43b1b8c_step_6",
+        "score": 0.0071,
+        "source": "hybrid",
+        "recipe_title": "冬瓜酿肉",
+        "chunk_type": "step",
+        "step_number": 6,
+        "content_preview": "《冬瓜酿肉》[难度：困难 | 约60分钟]\n食材：猪肉末 300g, 鸡蛋 1 个, 冬瓜 200g, 葱花, 胡椒粉 5g, 生抽 10ml, 淀粉 5g, 水淀粉 25g, 葱姜末, 盐 20g\n\n步骤 6：拿出 1 片冬瓜片卷起来，并把肉塞进去\n用到的食材：冬瓜"
+      },
+      {
+        "chunk_id": "rec_b5d305b3_step_7",
+        "score": 0.0071,
+        "source": "hybrid",
+        "recipe_title": "香干芹菜炒肉",
+        "chunk_type": "step",
+        "step_number": 7,
+        "content_preview": "《香干芹菜炒肉》[难度：中等 | 约60分钟]\n食材：豆干：150g, 香芹：4 根, 猪肉：200g, 蒜头：2 瓣, 辣椒：4 个, 花椒：6 粒, 盐：5g, 鸡精：3g, 老抽：8ml, 蚝油：5ml, 食用油：10-15ml\n\n步骤 7：加入猪肉炒至变色，再加入 8ml 老抽上色翻炒均匀（有豆瓣酱的，可以放入 3ml 豆瓣酱一起翻炒）\n用到的食材：猪肉, 老抽"
+      },
+      {
+        "chunk_id": "rec_a581634e_step_6",
+        "score": 0.007,
+        "source": "hybrid",
+        "recipe_title": "洋葱炒猪肉",
+        "chunk_type": "step",
+        "step_number": 6,
+        "content_preview": "《洋葱炒猪肉》[难度：中等 | 约30分钟]\n食材：洋葱 一颗, 猪肉, 蒜头, 食用油, 黑胡椒, 酱油, 糖, 麻油, 番茄酱, 料酒\n\n步骤 6：待猪肉熟后再翻炒 1、2 分钟即可起锅\n用到的食材：猪肉"
+      },
+      {
+        "chunk_id": "rec_1945f8c7_tip",
+        "score": 0.007,
+        "source": "hybrid",
+        "recipe_title": "烤鱼",
+        "chunk_type": "tip",
+        "step_number": 0,
+        "content_preview": "《烤鱼》[难度：困难 | 约60分钟]\n小贴士：\n技术总结：上述\n这道菜的食盐，胡椒粉，孜然粉，食用油，生抽，白糖等的使用量，根据个人口味和食材比例做决定，并不需要严格按照上述分量来做。"
+      },
+      {
+        "chunk_id": "rec_608caac3_step_3",
+        "score": 0.0069,
+        "source": "hybrid",
+        "recipe_title": "辣椒炒肉",
+        "chunk_type": "step",
+        "step_number": 3,
+        "content_preview": "《辣椒炒肉》[难度：中等 | 约45分钟]\n食材：青椒的数量 = 份数 * 3 个。, 肉量 = 份数 * 200g。, 盐量 = 份数 * 3g。, 生抽 = 份数 * 3ml。, 蚝油 = 份数 * 3ml。, 大蒜 = 份数 * 5g。, 生姜 = 份数 * 5g。, 酱油 = 份数 * 2ml。, 豆豉 = 份数 * 3g。\n\n步骤 3：将`猪瘦肉`切成`肉片`（顺着猪肉的纹理切，即刀和肉"
+      },
+      {
+        "chunk_id": "rec_4b37fb65_tip",
+        "score": 0.0069,
+        "source": "hybrid",
+        "recipe_title": "徽派红烧肉",
+        "chunk_type": "tip",
+        "step_number": 0,
+        "content_preview": "《徽派红烧肉》[难度：困难 | 约45分钟]\n小贴士：\n葱是整根，不需要切碎\n步骤二加盐的目的是锁住五花肉的油脂\n制作过程，用部分五花肉做了水煮处理，跟未处理的一起做后续制作，发现未水煮的肉质更 Q 弹"
+      },
+      {
+        "chunk_id": "rec_0cc027f2_step_4",
+        "score": 0.0068,
+        "source": "hybrid",
+        "recipe_title": "黄瓜炒肉",
+        "chunk_type": "step",
+        "step_number": 4,
+        "content_preview": "《黄瓜炒肉》[难度：中等 | 约45分钟]\n食材：黄瓜 = 100 克 * 份数, 猪肉 = 50 克 * 份数, 油量 = 50 克 * 份数, 盐量 = 10 克 * 份数, 酱油 = 5 克 * 份数, 蒜瓣 = 2 瓣 * 份数, 小米辣 = 1 根 * 份数\n\n步骤 4：将蒜瓣去皮，压扁，切成蒜末备用\n用到的食材：蒜瓣"
+      },
+      {
+        "chunk_id": "rec_972a63fc_tip",
+        "score": 0.0068,
+        "source": "hybrid",
+        "recipe_title": "手撕包菜",
+        "chunk_type": "tip",
+        "step_number": 0,
+        "content_preview": "《手撕包菜》[难度：中等 | 约45分钟]\n小贴士：\n步骤五中，翻炒时间需要实际情况做调整，一般是炒到包菜七分熟后即可。七分熟是指包菜已经出水质感变软\n步骤五中，加盐的作用是锁住包菜水分的同时，给包菜上一点味道\n最后一个步骤中，翻炒时间根据实际情况和个人口感做灵活调整"
+      },
+      {
+        "chunk_id": "rec_16b69a01_ingredient_all",
+        "score": 0.0068,
+        "source": "hybrid",
+        "recipe_title": "猪肉烩酸菜",
+        "chunk_type": "ingredient",
+        "step_number": 0,
+        "content_preview": "《猪肉烩酸菜》[难度：困难 | 约60分钟]\n食材：\n- 猪排骨或者五花肉（总共） 1500 克\n- 东北酸菜 1000 克\n- 大葱 1 根\n- 姜 100 克\n- 蒜 4 瓣\n- 盐 10 克\n- 生抽酱油 15 克\n- 五香粉 10 克\n- 料酒 20 毫升\n- 大料 2 颗"
+      },
+      {
+        "chunk_id": "rec_c0f238a7_tip",
+        "score": 0.0068,
+        "source": "hybrid",
+        "recipe_title": "砂糖椰子冰沙",
+        "chunk_type": "tip",
+        "step_number": 0,
+        "content_preview": "《砂糖椰子冰沙》[难度：简单 | 约30分钟]\n小贴士：\n在以上步骤中，瓶装椰汁可以提前冰冻，但是不宜超过 7 天，否则有变质风险。"
+      },
+      {
+        "chunk_id": "rec_d43b1b8c_ingredient_all",
+        "score": 0.0067,
+        "source": "hybrid",
+        "recipe_title": "冬瓜酿肉",
+        "chunk_type": "ingredient",
+        "step_number": 0,
+        "content_preview": "《冬瓜酿肉》[难度：困难 | 约60分钟]\n食材：\n- 猪肉末 300g\n- 鸡蛋 1 个（可选,不习惯的人可能会有点腥）\n- 冬瓜 200g\n- 葱花（一根,约 20g）\n- 胡椒粉 5g\n- 生抽 10ml\n- 淀粉 5g\n- 水淀粉 25g（淀粉 25g,水 50ml）\n- 葱姜末（姜 3-4 片约 30g, 取上面一根葱花中的葱白部分即可）\n- 盐 20g"
+      },
+      {
+        "chunk_id": "rec_20b02c3a_tip",
+        "score": 0.0067,
+        "source": "hybrid",
+        "recipe_title": "桂圆红枣粥",
+        "chunk_type": "tip",
+        "step_number": 0,
+        "content_preview": "《桂圆红枣粥》[难度：简单 | 约30分钟]\n小贴士：\n对粥的稀稠程度有不同喜好的朋友可以酌情增加或减少水的用量，煮出来的粥是甜的，可以通过控制加入桂圆的数量控制甜度"
+      }
+    ],
+    "rerank_results": [
+      {
+        "chunk_id": "rec_b5d305b3_step_7",
+        "score": 0.2913,
+        "source": "hybrid",
+        "recipe_title": "香干芹菜炒肉",
+        "chunk_type": "step",
+        "step_number": 7,
+        "content_preview": "《香干芹菜炒肉》[难度：中等 | 约60分钟]\n食材：豆干：150g, 香芹：4 根, 猪肉：200g, 蒜头：2 瓣, 辣椒：4 个, 花椒：6 粒, 盐：5g, 鸡精：3g, 老抽：8ml, 蚝油：5ml, 食用油：10-15ml\n\n步骤 7：加入猪肉炒至变色，再加入 8ml 老抽上色翻炒均匀（有豆瓣酱的，可以放入 3ml 豆瓣酱一起翻炒）\n用到的食材：猪肉, 老抽"
+      },
+      {
+        "chunk_id": "rec_a581634e_step_6",
+        "score": 0.2424,
+        "source": "hybrid",
+        "recipe_title": "洋葱炒猪肉",
+        "chunk_type": "step",
+        "step_number": 6,
+        "content_preview": "《洋葱炒猪肉》[难度：中等 | 约30分钟]\n食材：洋葱 一颗, 猪肉, 蒜头, 食用油, 黑胡椒, 酱油, 糖, 麻油, 番茄酱, 料酒\n\n步骤 6：待猪肉熟后再翻炒 1、2 分钟即可起锅\n用到的食材：猪肉"
+      },
+      {
+        "chunk_id": "rec_a581634e_step_3",
+        "score": 0.211,
+        "source": "hybrid",
+        "recipe_title": "洋葱炒猪肉",
+        "chunk_type": "step",
+        "step_number": 3,
+        "content_preview": "《洋葱炒猪肉》[难度：中等 | 约30分钟]\n食材：洋葱 一颗, 猪肉, 蒜头, 食用油, 黑胡椒, 酱油, 糖, 麻油, 番茄酱, 料酒\n\n步骤 3：炒至变色后下蒜头炒香盛起备用\n用到的食材：蒜头"
+      },
+      {
+        "chunk_id": "rec_a581634e_step_5",
+        "score": 0.1842,
+        "source": "hybrid",
+        "recipe_title": "洋葱炒猪肉",
+        "chunk_type": "step",
+        "step_number": 5,
+        "content_preview": "《洋葱炒猪肉》[难度：中等 | 约30分钟]\n食材：洋葱 一颗, 猪肉, 蒜头, 食用油, 黑胡椒, 酱油, 糖, 麻油, 番茄酱, 料酒\n\n步骤 5：下刚盛起备用的猪肉翻炒至猪肉熟后\n用到的食材：猪肉"
+      },
+      {
+        "chunk_id": "rec_0cc027f2_step_1",
+        "score": 0.1469,
+        "source": "hybrid",
+        "recipe_title": "黄瓜炒肉",
+        "chunk_type": "step",
+        "step_number": 1,
+        "content_preview": "《黄瓜炒肉》[难度：中等 | 约45分钟]\n食材：黄瓜 = 100 克 * 份数, 猪肉 = 50 克 * 份数, 油量 = 50 克 * 份数, 盐量 = 10 克 * 份数, 酱油 = 5 克 * 份数, 蒜瓣 = 2 瓣 * 份数, 小米辣 = 1 根 * 份数\n\n步骤 1：将猪瘦肉切片，放入碗中，倒入食用油 10 克，生抽，搅拌均匀，腌制 10 分钟"
+      }
+    ],
+    "has_related_content": false,
+    "generation_time_ms": 0,
+    "total_time_ms": 11236
+  }
+}
