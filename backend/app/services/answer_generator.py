@@ -31,6 +31,7 @@ class Citation:
     step_number: Optional[int]
     excerpt: str
     document_source: str
+    image_path: Optional[str] = None
 
 
 @dataclass
@@ -202,6 +203,7 @@ class AnswerGenerator:
                 "step_number": step_number,
                 "excerpt": result.content[:100],
                 "document_source": document_source,
+                "image_path": meta.get("image_path"),
             }
 
         context = "\n\n".join(formatted)
@@ -464,6 +466,7 @@ class AnswerGenerator:
                     step_number=meta.get("step_number"),
                     excerpt=meta["excerpt"],
                     document_source=meta["document_source"],
+                    image_path=meta.get("image_path"),
                 ))
 
         return citations
@@ -515,6 +518,7 @@ def format_final_response(llm_output: str, citation_map: Dict[str, Dict]) -> Dic
                 "chunk_type": citation_map[cid]["chunk_type"],
                 "step_number": citation_map[cid]["step_number"],
                 "excerpt": citation_map[cid]["excerpt"],
+                "image_path": citation_map[cid].get("image_path"),
             })
 
     return {

@@ -2,6 +2,7 @@
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from contextlib import asynccontextmanager
 import logging
 import sys
@@ -44,6 +45,9 @@ async def lifespan(app: FastAPI):
     # 连接Redis
     try:
         await init_redis()
+        # 初始化Redis版对话记忆
+        from app.services.conversation_memory import _init_conversation_memory
+        await _init_conversation_memory()
     except Exception as e:
         logger.warning(f"Redis connection failed: {e}. Caching will be unavailable.")
 
@@ -112,6 +116,12 @@ from app.api.endpoints import chat, recipes, evaluation
 app.include_router(chat.router, prefix="/api", tags=["chat"])
 app.include_router(recipes.router, prefix="/api", tags=["recipes"])
 app.include_router(evaluation.router, prefix="/api", tags=["evaluation"])
+
+# 挂载静态文件目录，使上传的图片可通过URL访问
+import os
+upload_dir = settings.UPLOAD_DIR if hasattr(settings, 'UPLOAD_DIR') else "./uploads"
+os.makedirs(upload_dir, exist_ok=True)
+app.mount("/uploads", StaticFiles(directory=upload_dir), name="uploads")
 
 # TODO: 注册其他API路由
 # from app.api.endpoints import documents

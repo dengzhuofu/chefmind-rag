@@ -141,6 +141,7 @@ class HybridRetriever:
                                 "chunk_type": hit.get("entity", {}).get("chunk_type"),
                                 "step_number": hit.get("entity", {}).get("step_number"),
                                 "document_source": hit.get("entity", {}).get("document_source"),
+                                "image_path": hit.get("entity", {}).get("image_path"),
                             },
                             source="vector"
                         )
@@ -161,7 +162,7 @@ class HybridRetriever:
                     output_fields=[
                         "chunk_id", "content", "recipe_id", "recipe_title",
                         "chunk_type", "step_number", "document_source",
-                        "cooking_time", "difficulty", "tags"
+                        "cooking_time", "difficulty", "tags", "image_path"
                     ],
                     search_params=search_params,
                     filter=self._build_filter_expr(filters)
@@ -184,6 +185,7 @@ class HybridRetriever:
                                 "cooking_time": hit.entity.get("cooking_time"),
                                 "difficulty": hit.entity.get("difficulty"),
                                 "tags": hit.entity.get("tags"),
+                                "image_path": hit.entity.get("image_path"),
                             },
                             source="vector"
                         )
@@ -265,6 +267,7 @@ class HybridRetriever:
                             "chunk_type": meta.get("chunk_type", ""),
                             "step_number": meta.get("step_number"),
                             "document_source": meta.get("document_source", ""),
+                            "image_path": meta.get("image_path"),
                         },
                         source="bm25"
                     )
@@ -285,6 +288,7 @@ class HybridRetriever:
                     output_fields=[
                         "chunk_id", "content", "recipe_id", "recipe_title",
                         "chunk_type", "step_number", "document_source",
+                        "image_path",
                     ],
                     search_params=search_params,
                     filter=self._build_filter_expr(filters)
@@ -302,6 +306,7 @@ class HybridRetriever:
                                 "chunk_type": hit.entity.get("chunk_type"),
                                 "step_number": hit.entity.get("step_number"),
                                 "document_source": hit.entity.get("document_source"),
+                                "image_path": hit.entity.get("image_path"),
                             },
                             source="bm25"
                         )

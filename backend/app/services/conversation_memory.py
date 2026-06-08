@@ -277,5 +277,68 @@ class ConversationBufferWindowMemory:
         self.messages = []
 
 
-# 全局实例
-conversation_memory = ConversationMemory(max_turns=5)
+class InMemoryConversationMemory:
+    """
+    内存版对话记忆（不需要Redis）
+    用于评估脚本和测试场景
+    """
+
+    def __init__(self, max_turns: int = 5):
+        self.max_turns = max_turns
+        self._sessions: Dict[str, List[Message]] = {}
+        self._recipes: Dict[str, str] = {}
+
+    async def add_message(self, session_id: str, role: str, content: str, metadata=None):
+        if session_id not in self._sessions:
+            self._sessions[session_id] = []
+        self._sessions[session_id].append(Message(role=role, content=content, metadata=metadata))
+        # 保留最近 max_turns*2 条
+        max_messages = self.max_turns * 2
+        if len(self._sessions[session_id]) > max_messages:
+            self._sessions[session_id] = self._sessions[session_id][-max_messages:]
+
+    async def get_history(self, session_id: str, max_turns=None) -> List[Message]:
+        count = (max_turns or self.max_turns) * 2
+        return self._sessions.get(session_id, [])[-count:]
+
+    async def get_history_as_string(self, session_id: str, max_turns=None) -> str:
+        messages = await self.get_history(session_id, max_turns)
+        if not messages:
+            return ""
+        parts = []
+        for msg in messages:
+            prefix = "用户" if msg.role == "user" else "助手"
+            parts.append(f"{prefix}: {msg.content}")
+        return "\n".join(parts)
+
+    async def get_current_recipe(self, session_id: str) -> Optional[str]:
+        return self._recipes.get(session_id)
+
+    async def clear_session(self, session_id: str):
+        self._sessions.pop(session_id, None)
+        self._recipes.pop(session_id, None)
+
+    async def get_memory_summary(self, session_id: str) -> Dict[str, Any]:
+        messages = self._sessions.get(session_id, [])
+        return {
+            "session_id": session_id,
+            "message_count": len(messages),
+            "current_recipe": self._recipes.get(session_id),
+            "last_message": messages[-1].to_dict() if messages else None,
+        }
+
+
+# 全局实例：优先使用Redis，不可用时回退到内存版
+conversation_memory = InMemoryConversationMemory(max_turns=5)
+
+async def _init_conversation_memory():
+    """尝试切换到Redis版对话记忆"""
+    global conversation_memory
+    try:
+        from app.core.redis import get_redis
+        redis = await get_redis()
+        await redis.ping()
+        conversation_memory = ConversationMemory(max_turns=5)
+        logger.info("Using Redis-backed conversation memory")
+    except Exception:
+        logger.info("Redis not available, using in-memory conversation memory")

@@ -215,7 +215,7 @@ class RAGPipeline:
             await self.memory.add_message(session_id, "assistant", answer_result.answer)
             await conversation_service.save_message(
                 session_id, "assistant", answer_result.answer,
-                citations=[{"citation_id": c.citation_id, "recipe_title": c.recipe_title, "excerpt": c.excerpt} for c in answer_result.citations]
+                citations=[{"citation_id": c.citation_id, "recipe_title": c.recipe_title, "excerpt": c.excerpt, "image_path": c.image_path} for c in answer_result.citations]
             )
 
             debug_info["total_time_ms"] = int((time.time() - total_start) * 1000)
@@ -392,6 +392,7 @@ class RAGPipeline:
                     "step_number": c.step_number,
                     "excerpt": c.excerpt,
                     "document_source": c.document_source,
+                    "image_path": c.image_path,
                 }
                 for c in citations
             ]

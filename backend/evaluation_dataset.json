@@ -1,0 +1,502 @@
+[
+  {
+    "id": "TC001",
+    "query": "清蒸鲈鱼怎么做？",
+    "expected_recipes": ["清蒸鲈鱼"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "清蒸鲈鱼的做法：将鲈鱼处理干净，鱼身改刀，放上姜片和葱段，大火清蒸10分钟，出锅后淋上蒸鱼豉油和热油。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 水产类"
+  },
+  {
+    "id": "TC002",
+    "query": "宫保鸡丁需要哪些食材？",
+    "expected_recipes": ["宫保鸡丁"],
+    "route_type": "ingredient_search",
+    "difficulty": "easy",
+    "ground_truth": "宫保鸡丁的主要食材包括鸡胸肉、花生米、干辣椒、花椒、葱、姜、蒜、料酒、酱油、醋、糖、淀粉。",
+    "should_refuse": false,
+    "description": "食材查询 - 肉类"
+  },
+  {
+    "id": "TC003",
+    "query": "没有蚝油可以用什么代替？",
+    "expected_recipes": [],
+    "route_type": "substitution",
+    "difficulty": "medium",
+    "ground_truth": "没有蚝油可以用酱油加少量糖代替，或者用蘑菇酱、鲍鱼汁替代，都能提供类似的鲜味。",
+    "should_refuse": false,
+    "description": "食材替换查询"
+  },
+  {
+    "id": "TC004",
+    "query": "红烧肉有什么小技巧？",
+    "expected_recipes": ["红烧肉"],
+    "route_type": "tip",
+    "difficulty": "easy",
+    "ground_truth": "红烧肉的烹饪技巧包括：炒糖色时小火慢炒，五花肉要先焯水去腥，炖煮时用小火慢炖使肉质软烂。",
+    "should_refuse": false,
+    "description": "技巧查询 - 肉类"
+  },
+  {
+    "id": "TC005",
+    "query": "如何做一道简单的家常菜？",
+    "expected_recipes": [],
+    "route_type": "generate_recipe",
+    "difficulty": "hard",
+    "ground_truth": "",
+    "should_refuse": false,
+    "description": "模糊查询 - 生成类"
+  },
+  {
+    "id": "TC006",
+    "query": "外星人怎么做？",
+    "expected_recipes": [],
+    "route_type": "unknown",
+    "difficulty": "medium",
+    "ground_truth": "根据现有食谱库，无法回答此问题。",
+    "should_refuse": true,
+    "description": "无答案查询"
+  },
+  {
+    "id": "TC007",
+    "query": "麻婆豆腐的正宗做法是什么？",
+    "expected_recipes": ["麻婆豆腐"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "麻婆豆腐的正宗做法：豆腐切块焯水，热锅炒牛肉末，加入豆瓣酱炒出红油，放入豆腐煮至入味，最后撒花椒粉。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 川菜"
+  },
+  {
+    "id": "TC008",
+    "query": "糖醋鲤鱼需要什么材料？",
+    "expected_recipes": ["糖醋鲤鱼"],
+    "route_type": "ingredient_search",
+    "difficulty": "easy",
+    "ground_truth": "糖醋鲤鱼需要鲤鱼、醋、糖、番茄酱、淀粉、葱、姜、蒜、料酒、盐等食材。",
+    "should_refuse": false,
+    "description": "食材查询 - 水产类"
+  },
+  {
+    "id": "TC009",
+    "query": "小龙虾怎么处理才干净？",
+    "expected_recipes": ["小龙虾"],
+    "route_type": "tip",
+    "difficulty": "medium",
+    "ground_truth": "小龙虾处理方法：先用清水浸泡吐沙，然后用刷子刷洗腹部，剪去虾头前端的虾囊，抽出虾线。",
+    "should_refuse": false,
+    "description": "技巧查询 - 水产类"
+  },
+  {
+    "id": "TC010",
+    "query": "水煮鱼的做法",
+    "expected_recipes": ["水煮鱼"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "水煮鱼做法：鱼片用料酒和淀粉腌制，豆芽焯水铺底，鱼片煮熟放在豆芽上，最后浇上热油和辣椒花椒。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 水产类"
+  },
+  {
+    "id": "TC011",
+    "query": "可乐鸡翅怎么做？",
+    "expected_recipes": ["可乐鸡翅"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "可乐鸡翅做法：鸡翅划刀腌制，煎至两面金黄，倒入可乐没过鸡翅，加酱油和姜片，大火收汁。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 肉类"
+  },
+  {
+    "id": "TC012",
+    "query": "做红烧鱼头需要哪些调料？",
+    "expected_recipes": ["红烧鱼头"],
+    "route_type": "ingredient_search",
+    "difficulty": "easy",
+    "ground_truth": "红烧鱼头需要鱼头、豆瓣酱、酱油、料酒、糖、醋、葱、姜、蒜、辣椒等调料。",
+    "should_refuse": false,
+    "description": "食材查询 - 水产类"
+  },
+  {
+    "id": "TC013",
+    "query": "没有料酒可以用什么替代？",
+    "expected_recipes": [],
+    "route_type": "substitution",
+    "difficulty": "medium",
+    "ground_truth": "没有料酒可以用白酒、黄酒、啤酒替代，也可以用柠檬汁或醋加少量水来去腥。",
+    "should_refuse": false,
+    "description": "食材替换查询"
+  },
+  {
+    "id": "TC014",
+    "query": "蒸水蛋怎么才能蒸得嫩滑？",
+    "expected_recipes": ["蒸水蛋"],
+    "route_type": "tip",
+    "difficulty": "medium",
+    "ground_truth": "蒸水蛋嫩滑的技巧：蛋液和温水比例1:1.5，过筛去除气泡，盖保鲜膜，中小火蒸8-10分钟。",
+    "should_refuse": false,
+    "description": "技巧查询 - 早餐类"
+  },
+  {
+    "id": "TC015",
+    "query": "油焖大虾的详细步骤",
+    "expected_recipes": ["油焖大虾"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "油焖大虾做法：大虾剪去虾须虾枪，热油煎至变色，加料酒、酱油、糖、醋和适量水，焖煮至汤汁浓稠。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 水产类"
+  },
+  {
+    "id": "TC016",
+    "query": "戚风蛋糕怎么做才不塌陷？",
+    "expected_recipes": ["戚风蛋糕"],
+    "route_type": "tip",
+    "difficulty": "medium",
+    "ground_truth": "戚风蛋糕不塌陷的技巧：蛋白打发到硬性发泡，翻拌不要消泡，烤好后倒扣冷却，出炉震模排出热气。",
+    "should_refuse": false,
+    "description": "技巧查询 - 甜点类"
+  },
+  {
+    "id": "TC017",
+    "query": "茶叶蛋需要煮多长时间？",
+    "expected_recipes": ["茶叶蛋"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "茶叶蛋先煮熟鸡蛋，敲碎壳，放入茶叶、酱油、八角、桂皮等调料的卤水中，小火煮30分钟，浸泡过夜更入味。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 早餐类"
+  },
+  {
+    "id": "TC018",
+    "query": "做宫保鸡丁没有花生米怎么办？",
+    "expected_recipes": ["宫保鸡丁"],
+    "route_type": "substitution",
+    "difficulty": "medium",
+    "ground_truth": "宫保鸡丁没有花生米可以用腰果、核桃仁或杏仁替代，同样能提供酥脆的口感。",
+    "should_refuse": false,
+    "description": "食材替换查询 - 结合具体菜谱"
+  },
+  {
+    "id": "TC019",
+    "query": "酸梅汤怎么熬？",
+    "expected_recipes": ["酸梅汤"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "酸梅汤做法：乌梅、山楂、甘草、陈皮洗净浸泡，大火煮开后小火熬30分钟，加冰糖调味，冷藏后饮用。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 饮品类"
+  },
+  {
+    "id": "TC020",
+    "query": "手抓饼怎么做才酥脆？",
+    "expected_recipes": ["手抓饼"],
+    "route_type": "tip",
+    "difficulty": "medium",
+    "ground_truth": "手抓饼酥脆的技巧：面团要充分醒发，抹油酥后卷起再擀，中小火煎制，用铲子拍打分层。",
+    "should_refuse": false,
+    "description": "技巧查询 - 早餐类"
+  },
+  {
+    "id": "TC021",
+    "query": "提拉米苏的做法",
+    "expected_recipes": ["提拉米苏"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "提拉米苏做法：马斯卡彭奶酪打发，加入蛋黄糊拌匀，手指饼干蘸咖啡酒，一层饼干一层奶酪糊交替铺放，冷藏4小时以上。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 甜点类"
+  },
+  {
+    "id": "TC022",
+    "query": "葱烧海参需要什么食材？",
+    "expected_recipes": ["葱烧海参"],
+    "route_type": "ingredient_search",
+    "difficulty": "easy",
+    "ground_truth": "葱烧海参需要海参、大葱、姜、酱油、蚝油、料酒、糖、淀粉、高汤等。",
+    "should_refuse": false,
+    "description": "食材查询 - 水产类"
+  },
+  {
+    "id": "TC023",
+    "query": "做蛋糕没有低筋面粉怎么办？",
+    "expected_recipes": ["戚风蛋糕"],
+    "route_type": "substitution",
+    "difficulty": "medium",
+    "ground_truth": "没有低筋面粉可以用普通面粉和玉米淀粉按4:1比例混合替代，或者用普通面粉加少量泡打粉。",
+    "should_refuse": false,
+    "description": "食材替换查询 - 甜点类"
+  },
+  {
+    "id": "TC024",
+    "query": "口水鸡怎么做？",
+    "expected_recipes": ["口水鸡"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "口水鸡做法：鸡腿煮熟后冰水浸泡，切块摆盘，淋上用辣椒油、花椒粉、酱油、醋、糖、蒜泥调制的酱汁。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 肉类"
+  },
+  {
+    "id": "TC025",
+    "query": "如何让煎饺底部金黄酥脆？",
+    "expected_recipes": ["煎饺"],
+    "route_type": "tip",
+    "difficulty": "medium",
+    "ground_truth": "煎饺底部金黄的技巧：平底锅刷油摆入饺子，煎到底部微黄后加水至饺子1/3处，盖盖焖煮，水干后继续煎至底部酥脆。",
+    "should_refuse": false,
+    "description": "技巧查询 - 早餐类"
+  },
+  {
+    "id": "TC026",
+    "query": "糖醋汁怎么调？",
+    "expected_recipes": ["糖醋汁"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "糖醋汁调配比例：酱油1份、醋2份、糖3份、水4份，加少量淀粉搅匀，可根据口味微调。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 调味料"
+  },
+  {
+    "id": "TC027",
+    "query": "蒜蓉虾要蒸多久？",
+    "expected_recipes": ["蒜蓉虾"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "蒜蓉虾一般蒸8-10分钟，虾壳变红、虾肉变白即可，不要蒸太久以免虾肉变老。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 水产类"
+  },
+  {
+    "id": "TC028",
+    "query": "家里没有烤箱怎么做甜点？",
+    "expected_recipes": ["炸鲜奶", "奥利奥冰淇淋", "龟苓膏"],
+    "route_type": "generate_recipe",
+    "difficulty": "hard",
+    "ground_truth": "没有烤箱可以做的甜点包括：炸鲜奶（油炸）、奥利奥冰淇淋（冰箱冷冻）、龟苓膏（冷藏凝固）、雪花酥（平底锅）等。",
+    "should_refuse": false,
+    "description": "模糊查询 - 设备限制"
+  },
+  {
+    "id": "TC029",
+    "query": "波士顿大龙虾怎么做？",
+    "expected_recipes": [],
+    "route_type": "unknown",
+    "difficulty": "medium",
+    "ground_truth": "根据现有食谱库，无法回答此问题。",
+    "should_refuse": true,
+    "description": "无答案查询 - 不存在的菜谱"
+  },
+  {
+    "id": "TC030",
+    "query": "卤菜的卤水怎么配？",
+    "expected_recipes": ["卤菜"],
+    "route_type": "ingredient_search",
+    "difficulty": "medium",
+    "ground_truth": "卤水配方：八角、桂皮、香叶、花椒、干辣椒、草果、小茴香、丁香、酱油、冰糖、料酒、姜、葱。",
+    "should_refuse": false,
+    "description": "食材查询 - 肉类"
+  },
+  {
+    "id": "TC031",
+    "query": "奶茶怎么做才好喝？",
+    "expected_recipes": ["奶茶"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "奶茶做法：红茶煮出茶汤，加牛奶和糖搅匀，可加珍珠或椰果，冷藏后饮用更佳。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 饮品类"
+  },
+  {
+    "id": "TC032",
+    "query": "麻婆豆腐和家常豆腐有什么区别？",
+    "expected_recipes": ["麻婆豆腐", "家常豆腐"],
+    "route_type": "cross_document",
+    "difficulty": "hard",
+    "ground_truth": "麻婆豆腐是川菜，用牛肉末和豆瓣酱，麻辣鲜香；家常豆腐用青椒木耳炒，口味偏咸鲜，做法更简单。",
+    "should_refuse": false,
+    "description": "跨文档比较查询"
+  },
+  {
+    "id": "TC033",
+    "query": "做菜时油温怎么判断？",
+    "expected_recipes": [],
+    "route_type": "tip",
+    "difficulty": "medium",
+    "ground_truth": "判断油温的方法：三四成热油面微动，五六成热筷子周围起小泡，七八成热油面有明显波纹，九成热接近冒烟。",
+    "should_refuse": false,
+    "description": "通用烹饪技巧查询"
+  },
+  {
+    "id": "TC034",
+    "query": "哪个菜谱里用了咖喱？",
+    "expected_recipes": ["咖喱炒蟹"],
+    "route_type": "ingredient_search",
+    "difficulty": "medium",
+    "ground_truth": "咖喱炒蟹使用了咖喱作为主要调味料，是一道东南亚风味的海鲜菜品。",
+    "should_refuse": false,
+    "description": "食材反向查询"
+  },
+  {
+    "id": "TC035",
+    "query": "奥利奥冰淇淋的做法",
+    "expected_recipes": ["奥利奥冰淇淋"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "奥利奥冰淇淋做法：淡奶油打发，加入炼乳拌匀，压碎奥利奥饼干拌入，倒入容器冷冻4小时以上。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 甜点类"
+  },
+  {
+    "id": "TC036",
+    "query": "如何做一道适合减肥吃的菜？",
+    "expected_recipes": [],
+    "route_type": "generate_recipe",
+    "difficulty": "hard",
+    "ground_truth": "",
+    "should_refuse": false,
+    "description": "模糊查询 - 需求导向"
+  },
+  {
+    "id": "TC037",
+    "query": "啤酒鸭用什么啤酒好？",
+    "expected_recipes": ["乡村啤酒鸭"],
+    "route_type": "tip",
+    "difficulty": "medium",
+    "ground_truth": "啤酒鸭一般用普通淡啤酒即可，不建议用黑啤或果味啤酒，以免影响菜品的原味。",
+    "should_refuse": false,
+    "description": "技巧查询 - 肉类"
+  },
+  {
+    "id": "TC038",
+    "query": "凉拌鸡丝需要哪些调料？",
+    "expected_recipes": ["凉拌鸡丝"],
+    "route_type": "ingredient_search",
+    "difficulty": "easy",
+    "ground_truth": "凉拌鸡丝需要鸡胸肉、黄瓜、辣椒油、花椒粉、酱油、醋、糖、蒜、香菜、芝麻等。",
+    "should_refuse": false,
+    "description": "食材查询 - 肉类"
+  },
+  {
+    "id": "TC039",
+    "query": "宇宙飞船怎么造？",
+    "expected_recipes": [],
+    "route_type": "unknown",
+    "difficulty": "easy",
+    "ground_truth": "根据现有食谱库，无法回答此问题。",
+    "should_refuse": true,
+    "description": "无答案查询 - 完全无关"
+  },
+  {
+    "id": "TC040",
+    "query": "红烧肉和东坡肉有什么不同？",
+    "expected_recipes": ["红烧肉"],
+    "route_type": "cross_document",
+    "difficulty": "hard",
+    "ground_truth": "红烧肉和东坡肉都是五花肉做的，东坡肉是杭州名菜，用黄酒慢炖，肉块更大更方正；红烧肉做法更家常，各地做法有差异。",
+    "should_refuse": false,
+    "description": "跨文档比较查询"
+  },
+  {
+    "id": "TC041",
+    "query": "草莓酱怎么保存？",
+    "expected_recipes": ["草莓酱"],
+    "route_type": "tip",
+    "difficulty": "medium",
+    "ground_truth": "草莓酱保存方法：装入消毒过的玻璃瓶中，趁热密封，倒扣放凉后冷藏保存，开封后尽快食用。",
+    "should_refuse": false,
+    "description": "技巧查询 - 调味料"
+  },
+  {
+    "id": "TC042",
+    "query": "干煎阿根廷红虾的做法",
+    "expected_recipes": ["干煎阿根廷红虾"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "干煎阿根廷红虾做法：大虾开背去虾线，撒盐和黑胡椒，平底锅少油煎至两面变红，挤柠檬汁提味。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 水产类"
+  },
+  {
+    "id": "TC043",
+    "query": "做面包没有黄油用什么代替？",
+    "expected_recipes": ["无厨师机蜂蜜面包"],
+    "route_type": "substitution",
+    "difficulty": "medium",
+    "ground_truth": "做面包没有黄油可以用玉米油、椰子油或橄榄油代替，用量减少约20%，但风味会略有不同。",
+    "should_refuse": false,
+    "description": "食材替换查询 - 甜点类"
+  },
+  {
+    "id": "TC044",
+    "query": "冬天适合喝什么热饮？",
+    "expected_recipes": ["酸梅汤", "奶茶", "桂圆红枣粥"],
+    "route_type": "generate_recipe",
+    "difficulty": "hard",
+    "ground_truth": "",
+    "should_refuse": false,
+    "description": "模糊查询 - 季节推荐"
+  },
+  {
+    "id": "TC045",
+    "query": "葱油桂鱼怎么做？",
+    "expected_recipes": ["葱油桂鱼"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "葱油桂鱼做法：桂鱼蒸熟后铺上葱丝，淋上蒸鱼豉油，最后浇上滚烫的热油激发出葱香。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 水产类"
+  },
+  {
+    "id": "TC046",
+    "query": "白灼虾蘸什么酱好吃？",
+    "expected_recipes": ["白灼虾"],
+    "route_type": "tip",
+    "difficulty": "easy",
+    "ground_truth": "白灼虾常见蘸料：酱油加姜丝和少许醋，或者蒜蓉酱油，也可以用芥末酱油。",
+    "should_refuse": false,
+    "description": "技巧查询 - 水产类"
+  },
+  {
+    "id": "TC047",
+    "query": "哪个菜谱用到了芋头？",
+    "expected_recipes": ["反沙芋头", "芋泥雪媚娘"],
+    "route_type": "ingredient_search",
+    "difficulty": "medium",
+    "ground_truth": "用到芋头的菜谱有反沙芋头（潮汕甜品）和芋泥雪媚娘（日式甜点），都是以芋头为主要食材。",
+    "should_refuse": false,
+    "description": "食材反向查询"
+  },
+  {
+    "id": "TC048",
+    "query": "冰粉怎么做？",
+    "expected_recipes": ["冰粉"],
+    "route_type": "step_lookup",
+    "difficulty": "easy",
+    "ground_truth": "冰粉做法：冰粉粉加开水搅匀，放凉凝固后切块，加入红糖水、花生碎、葡萄干、芝麻等配料。",
+    "should_refuse": false,
+    "description": "基础步骤查询 - 饮品类"
+  },
+  {
+    "id": "TC049",
+    "query": "做菜放盐放多少合适？",
+    "expected_recipes": [],
+    "route_type": "tip",
+    "difficulty": "medium",
+    "ground_truth": "一般炒菜每500g食材放2-3g盐，汤类可以稍多，腌制食品需要更多。建议少量多次添加，边尝边调。",
+    "should_refuse": false,
+    "description": "通用烹饪技巧查询"
+  },
+  {
+    "id": "TC050",
+    "query": "火星上能种什么菜？",
+    "expected_recipes": [],
+    "route_type": "unknown",
+    "difficulty": "easy",
+    "ground_truth": "根据现有食谱库，无法回答此问题。",
+    "should_refuse": true,
+    "description": "无答案查询 - 科幻类"
+  }
+]

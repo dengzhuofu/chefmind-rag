@@ -1,0 +1,48 @@
+============================================================
+ChefMind RAG 评估结果
+============================================================
+总测试数: 50
+通过: 30
+失败: 20
+通过率: 60.0%
+
+自定义指标:
+  recall_at_5: 0.8867
+  citation_accuracy: 0.8350
+  refuse_accuracy: 0.9200
+
+按路由类型:
+  step_lookup: 12/16 (75%)
+  ingredient_search: 4/8 (50%)
+  substitution: 4/5 (80%)
+  tip: 6/11 (55%)
+  generate_recipe: 1/4 (25%)
+  unknown: 3/4 (75%)
+  cross_document: 0/2 (0%)
+
+按难度:
+  easy: 19/25 (76%)
+  medium: 10/19 (53%)
+  hard: 1/6 (17%)
+
+失败用例:
+  TC004: 红烧肉有什么小技巧？ [metric_fail]
+  TC005: 如何做一道简单的家常菜？ [metric_fail]
+  TC009: 小龙虾怎么处理才干净？ [metric_fail]
+  TC013: 没有料酒可以用什么替代？ [metric_fail]
+  TC014: 蒸水蛋怎么才能蒸得嫩滑？ [metric_fail]
+  TC017: 茶叶蛋需要煮多长时间？ [metric_fail]
+  TC019: 酸梅汤怎么熬？ [metric_fail]
+  TC025: 如何让煎饺底部金黄酥脆？ [metric_fail]
+  TC028: 家里没有烤箱怎么做甜点？ [metric_fail]
+  TC029: 波士顿大龙虾怎么做？ [Expected refusal but got answer]
+  TC030: 卤菜的卤水怎么配？ [metric_fail]
+  TC032: 麻婆豆腐和家常豆腐有什么区别？ [Expected answer but got refusal]
+  TC033: 做菜时油温怎么判断？ [Expected answer but got refusal]
+  TC034: 哪个菜谱里用了咖喱？ [metric_fail]
+  TC038: 凉拌鸡丝需要哪些调料？ [metric_fail]
+  TC040: 红烧肉和东坡肉有什么不同？ [Expected answer but got refusal]
+  TC042: 干煎阿根廷红虾的做法 [metric_fail]
+  TC044: 冬天适合喝什么热饮？ [metric_fail]
+  TC045: 葱油桂鱼怎么做？ [metric_fail]
+  TC047: 哪个菜谱用到了芋头？ [metric_fail]

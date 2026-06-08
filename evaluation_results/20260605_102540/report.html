@@ -1,0 +1,633 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ChefMind RAG Evaluation Report</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.7/dist/chart.umd.min.js"></script>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; background: #f0f2f5; color: #1a1a2e; line-height: 1.6; }
+.container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+h1 { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+.subtitle { color: #666; margin-bottom: 32px; font-size: 14px; }
+.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; margin-bottom: 32px; }
+.card { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); text-align: center; }
+.card-label { font-size: 13px; color: #888; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+.card-value { font-size: 36px; font-weight: 700; }
+.card-value.green { color: #22c55e; }
+.card-value.yellow { color: #eab308; }
+.card-value.red { color: #ef4444; }
+.charts { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 32px; }
+@media (max-width: 768px) { .charts { grid-template-columns: 1fr; } }
+.chart-box { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.chart-box h3 { font-size: 16px; margin-bottom: 16px; color: #333; }
+.ragas-section { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); margin-bottom: 32px; }
+.ragas-section h3 { font-size: 16px; margin-bottom: 16px; color: #333; }
+.ragas-grid { display: flex; flex-wrap: wrap; gap: 24px; }
+.metric-item { display: flex; flex-direction: column; min-width: 140px; }
+.metric-label { font-size: 12px; color: #888; text-transform: uppercase; margin-bottom: 4px; }
+.metric-value { font-size: 20px; font-weight: 600; color: #333; }
+.metric-value.na { color: #ccc; }
+.table-section { background: #fff; border-radius: 12px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.08); }
+.table-section h3 { font-size: 16px; margin-bottom: 16px; color: #333; }
+.table-controls { display: flex; gap: 8px; margin-bottom: 16px; flex-wrap: wrap; }
+.filter-btn { padding: 6px 14px; border: 1px solid #ddd; border-radius: 6px; background: #fff; cursor: pointer; font-size: 13px; transition: all 0.2s; }
+.filter-btn:hover { border-color: #3b82f6; color: #3b82f6; }
+.filter-btn.active { background: #3b82f6; color: #fff; border-color: #3b82f6; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th { text-align: left; padding: 10px 12px; border-bottom: 2px solid #e5e7eb; color: #666; font-weight: 600; font-size: 12px; text-transform: uppercase; cursor: pointer; user-select: none; white-space: nowrap; }
+th:hover { color: #3b82f6; }
+td { padding: 10px 12px; border-bottom: 1px solid #f0f0f0; }
+tr.fail { background: #fef2f2; }
+tr.pass { background: #fff; }
+tr:hover { background: #f8fafc; }
+.badge { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; }
+.badge.pass { background: #dcfce7; color: #16a34a; }
+.badge.fail { background: #fee2e2; color: #dc2626; }
+.query-cell { max-width: 280px; }
+.error-cell { max-width: 200px; color: #dc2626; font-size: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>ChefMind RAG Evaluation Report</h1>
+    <p class="subtitle">Generated from evaluation results &middot; 50 test cases</p>
+
+    <div class="cards">
+        <div class="card">
+            <div class="card-label">Pass Rate</div>
+            <div class="card-value yellow">60.0%</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Recall@5</div>
+            <div class="card-value green">0.8867</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Citation Accuracy</div>
+            <div class="card-value green">0.8350</div>
+        </div>
+        <div class="card">
+            <div class="card-label">Refuse Accuracy</div>
+            <div class="card-value green">0.9200</div>
+        </div>
+    </div>
+
+    <div class="charts">
+        <div class="chart-box">
+            <h3>Pass Rate by Route Type</h3>
+            <canvas id="routeChart"></canvas>
+        </div>
+        <div class="chart-box">
+            <h3>Pass Rate by Difficulty</h3>
+            <canvas id="diffChart"></canvas>
+        </div>
+    </div>
+
+    
+
+    <div class="table-section">
+        <h3>Test Results (50 cases)</h3>
+        <div class="table-controls">
+            <button class="filter-btn active" onclick="filterRows('all',this)">All (50)</button>
+            <button class="filter-btn" onclick="filterRows('fail',this)">Failed (20)</button>
+            <button class="filter-btn" onclick="filterRows('pass',this)">Passed (30)</button>
+        </div>
+        <table id="resultsTable">
+            <thead>
+                <tr>
+                    <th onclick="sortTable(0)">ID</th>
+                    <th onclick="sortTable(1)">Query</th>
+                    <th onclick="sortTable(2)">Status</th>
+                    <th onclick="sortTable(3)">Recall@5</th>
+                    <th onclick="sortTable(4)">Citation</th>
+                    <th onclick="sortTable(5)">Refuse</th>
+                    <th>Errors</th>
+                </tr>
+            </thead>
+            <tbody>
+                
+        <tr class="pass">
+            <td>TC001</td>
+            <td class="query-cell">清蒸鲈鱼怎么做？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC002</td>
+            <td class="query-cell">宫保鸡丁需要哪些食材？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC003</td>
+            <td class="query-cell">没有蚝油可以用什么代替？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC004</td>
+            <td class="query-cell">红烧肉有什么小技巧？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>0.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC005</td>
+            <td class="query-cell">如何做一道简单的家常菜？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>1.00</td>
+            <td>0.33</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC006</td>
+            <td class="query-cell">外星人怎么做？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC007</td>
+            <td class="query-cell">麻婆豆腐的正宗做法是什么？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC008</td>
+            <td class="query-cell">糖醋鲤鱼需要什么材料？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC009</td>
+            <td class="query-cell">小龙虾怎么处理才干净？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>1.00</td>
+            <td>0.50</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC010</td>
+            <td class="query-cell">水煮鱼的做法</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC011</td>
+            <td class="query-cell">可乐鸡翅怎么做？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC012</td>
+            <td class="query-cell">做红烧鱼头需要哪些调料？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC013</td>
+            <td class="query-cell">没有料酒可以用什么替代？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>1.00</td>
+            <td>0.33</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC014</td>
+            <td class="query-cell">蒸水蛋怎么才能蒸得嫩滑？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>1.00</td>
+            <td>0.75</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC015</td>
+            <td class="query-cell">油焖大虾的详细步骤</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC016</td>
+            <td class="query-cell">戚风蛋糕怎么做才不塌陷？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC017</td>
+            <td class="query-cell">茶叶蛋需要煮多长时间？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>1.00</td>
+            <td>0.50</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC018</td>
+            <td class="query-cell">做宫保鸡丁没有花生米怎么办？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC019</td>
+            <td class="query-cell">酸梅汤怎么熬？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>1.00</td>
+            <td>0.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC020</td>
+            <td class="query-cell">手抓饼怎么做才酥脆？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC021</td>
+            <td class="query-cell">提拉米苏的做法</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC022</td>
+            <td class="query-cell">葱烧海参需要什么食材？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC023</td>
+            <td class="query-cell">做蛋糕没有低筋面粉怎么办？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC024</td>
+            <td class="query-cell">口水鸡怎么做？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC025</td>
+            <td class="query-cell">如何让煎饺底部金黄酥脆？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>1.00</td>
+            <td>0.33</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC026</td>
+            <td class="query-cell">糖醋汁怎么调？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC027</td>
+            <td class="query-cell">蒜蓉虾要蒸多久？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC028</td>
+            <td class="query-cell">家里没有烤箱怎么做甜点？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>0.00</td>
+            <td>0.75</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC029</td>
+            <td class="query-cell">波士顿大龙虾怎么做？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>0.00</td>
+            <td class="error-cell">Expected refusal but got answer</td>
+        </tr>
+        <tr class="fail">
+            <td>TC030</td>
+            <td class="query-cell">卤菜的卤水怎么配？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>1.00</td>
+            <td>0.50</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC031</td>
+            <td class="query-cell">奶茶怎么做才好喝？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC032</td>
+            <td class="query-cell">麻婆豆腐和家常豆腐有什么区别？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>0.50</td>
+            <td>1.00</td>
+            <td>0.00</td>
+            <td class="error-cell">Expected answer but got refusal</td>
+        </tr>
+        <tr class="fail">
+            <td>TC033</td>
+            <td class="query-cell">做菜时油温怎么判断？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>0.00</td>
+            <td class="error-cell">Expected answer but got refusal</td>
+        </tr>
+        <tr class="fail">
+            <td>TC034</td>
+            <td class="query-cell">哪个菜谱里用了咖喱？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>0.00</td>
+            <td>0.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC035</td>
+            <td class="query-cell">奥利奥冰淇淋的做法</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC036</td>
+            <td class="query-cell">如何做一道适合减肥吃的菜？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC037</td>
+            <td class="query-cell">啤酒鸭用什么啤酒好？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC038</td>
+            <td class="query-cell">凉拌鸡丝需要哪些调料？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>1.00</td>
+            <td>0.75</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC039</td>
+            <td class="query-cell">宇宙飞船怎么造？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC040</td>
+            <td class="query-cell">红烧肉和东坡肉有什么不同？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>0.00</td>
+            <td>1.00</td>
+            <td>0.00</td>
+            <td class="error-cell">Expected answer but got refusal</td>
+        </tr>
+        <tr class="pass">
+            <td>TC041</td>
+            <td class="query-cell">草莓酱怎么保存？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC042</td>
+            <td class="query-cell">干煎阿根廷红虾的做法</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>1.00</td>
+            <td>0.75</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC043</td>
+            <td class="query-cell">做面包没有黄油用什么代替？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC044</td>
+            <td class="query-cell">冬天适合喝什么热饮？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>0.33</td>
+            <td>0.50</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC045</td>
+            <td class="query-cell">葱油桂鱼怎么做？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>1.00</td>
+            <td>0.75</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC046</td>
+            <td class="query-cell">白灼虾蘸什么酱好吃？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="fail">
+            <td>TC047</td>
+            <td class="query-cell">哪个菜谱用到了芋头？</td>
+            <td><span class="badge fail">FAIL</span></td>
+            <td>0.50</td>
+            <td>0.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC048</td>
+            <td class="query-cell">冰粉怎么做？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC049</td>
+            <td class="query-cell">做菜放盐放多少合适？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+        <tr class="pass">
+            <td>TC050</td>
+            <td class="query-cell">火星上能种什么菜？</td>
+            <td><span class="badge pass">PASS</span></td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td>1.00</td>
+            <td class="error-cell">-</td>
+        </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+new Chart(document.getElementById('routeChart'), {
+    type: 'bar',
+    data: {
+        labels: ["step_lookup", "ingredient_search", "substitution", "tip", "generate_recipe", "unknown", "cross_document"],
+        datasets: [{
+            label: 'Pass Rate (%)',
+            data: [75.0, 50.0, 80.0, 54.5, 25.0, 75.0, 0.0],
+            backgroundColor: [75.0, 50.0, 80.0, 54.5, 25.0, 75.0, 0.0].map(v => v >= 80 ? '#22c55e' : v >= 50 ? '#eab308' : '#ef4444'),
+            borderRadius: 6,
+            borderSkipped: false,
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: { legend: { display: false } },
+        scales: {
+            y: { beginAtZero: true, max: 100, ticks: { callback: v => v + '%' } },
+            x: { ticks: { font: { size: 11 } } }
+        }
+    }
+});
+
+new Chart(document.getElementById('diffChart'), {
+    type: 'doughnut',
+    data: {
+        labels: ["easy", "medium", "hard"],
+        datasets: [{
+            data: [76.0, 52.6, 16.7],
+            backgroundColor: ['#22c55e', '#eab308', '#ef4444', '#3b82f6'],
+            borderWidth: 0,
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: { position: 'bottom' },
+            tooltip: { callbacks: { label: ctx => ctx.label + ': ' + ctx.parsed + '%' } }
+        }
+    }
+});
+
+function filterRows(type, btn) {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    document.querySelectorAll('#resultsTable tbody tr').forEach(tr => {
+        tr.style.display = (type === 'all') ? '' : tr.classList.contains(type) ? '' : 'none';
+    });
+}
+
+let sortDir = {};
+function sortTable(col) {
+    const tbody = document.querySelector('#resultsTable tbody');
+    const rows = Array.from(tbody.querySelectorAll('tr'));
+    sortDir[col] = !sortDir[col];
+    rows.sort((a, b) => {
+        let va = a.cells[col].textContent.trim();
+        let vb = b.cells[col].textContent.trim();
+        const na = parseFloat(va), nb = parseFloat(vb);
+        if (!isNaN(na) && !isNaN(nb)) { va = na; vb = nb; }
+        if (va < vb) return sortDir[col] ? -1 : 1;
+        if (va > vb) return sortDir[col] ? 1 : -1;
+        return 0;
+    });
+    rows.forEach(r => tbody.appendChild(r));
+}
+</script>
+</body>
+</html>

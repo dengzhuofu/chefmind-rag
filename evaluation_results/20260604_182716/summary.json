@@ -1,0 +1,38 @@
+{
+  "total_tests": 1,
+  "passed": 1,
+  "failed": 0,
+  "pass_rate": 1.0,
+  "custom_metrics": {
+    "recall_at_5": 1.0,
+    "citation_accuracy": 1.0,
+    "refuse_accuracy": 1.0
+  },
+  "ragas_metrics": {},
+  "by_route_type": {
+    "step_lookup": {
+      "total": 1,
+      "passed": 1,
+      "metrics": {}
+    }
+  },
+  "by_difficulty": {
+    "easy": {
+      "total": 1,
+      "passed": 1
+    }
+  },
+  "test_results": [
+    {
+      "id": "TC001",
+      "query": "清蒸鲈鱼怎么做？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    }
+  ]
+}

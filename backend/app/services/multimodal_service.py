@@ -268,6 +268,74 @@ class MultimodalService:
             }
         }
 
+    # 食材识别提示词
+    INGREDIENT_IDENTIFICATION_PROMPT = """请识别这张图片中的食材或菜品，并列出可用于烹饪的食材。
+
+请以JSON格式返回：
+{
+    "ingredients": ["食材1", "食材2", ...],
+    "title": "识别到的菜品或主要食材",
+    "description": "简要描述图片内容"
+}
+
+要求：
+- ingredients 列出所有可识别的食材名称（如：鸡蛋、番茄、牛肉、青椒等）
+- 如果图片是一道成品菜，列出该菜的主要食材
+- 如果图片是生食材，直接列出食材名称
+- 只返回JSON，不要其他文字"""
+
+    async def identify_ingredients(self, image_base64: str) -> Dict[str, Any]:
+        """
+        识别图片中的食材
+
+        Args:
+            image_base64: Base64编码的图片数据
+
+        Returns:
+            {"ingredients": [...], "title": "...", "description": "..."}
+        """
+        try:
+            vision_llm = self._get_vision_llm()
+            if not vision_llm:
+                logger.warning("Vision LLM not available for ingredient identification")
+                return {"ingredients": [], "title": "未知", "description": "视觉模型不可用"}
+
+            from langchain_core.messages import HumanMessage
+
+            message = HumanMessage(
+                content=[
+                    {"type": "text", "text": self.INGREDIENT_IDENTIFICATION_PROMPT},
+                    {
+                        "type": "image_url",
+                        "image_url": {
+                            "url": f"data:image/jpeg;base64,{image_base64}"
+                        }
+                    }
+                ]
+            )
+
+            response = await vision_llm.ainvoke([message])
+
+            # 解析JSON响应
+            import json
+            content = response.content
+            start = content.find('{')
+            end = content.rfind('}') + 1
+            if start != -1 and end != -1:
+                json_str = content[start:end]
+                result = json.loads(json_str)
+                return {
+                    "ingredients": result.get("ingredients", []),
+                    "title": result.get("title", "未知"),
+                    "description": result.get("description", "")
+                }
+
+            return {"ingredients": [], "title": "未知", "description": "无法解析识别结果"}
+
+        except Exception as e:
+            logger.error(f"Ingredient identification failed: {e}")
+            return {"ingredients": [], "title": "未知", "description": f"识别失败: {str(e)}"}
+
     def get_image_url(self, image_path: str) -> str:
         """
         获取图片URL

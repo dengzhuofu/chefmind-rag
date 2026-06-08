@@ -1,0 +1,623 @@
+{
+  "total_tests": 50,
+  "passed": 30,
+  "failed": 20,
+  "pass_rate": 0.6,
+  "custom_metrics": {
+    "recall_at_5": 0.8866666666666667,
+    "citation_accuracy": 0.835,
+    "refuse_accuracy": 0.92
+  },
+  "ragas_metrics": {},
+  "by_route_type": {
+    "step_lookup": {
+      "total": 16,
+      "passed": 12,
+      "metrics": {}
+    },
+    "ingredient_search": {
+      "total": 8,
+      "passed": 4,
+      "metrics": {}
+    },
+    "substitution": {
+      "total": 5,
+      "passed": 4,
+      "metrics": {}
+    },
+    "tip": {
+      "total": 11,
+      "passed": 6,
+      "metrics": {}
+    },
+    "generate_recipe": {
+      "total": 4,
+      "passed": 1,
+      "metrics": {}
+    },
+    "unknown": {
+      "total": 4,
+      "passed": 3,
+      "metrics": {}
+    },
+    "cross_document": {
+      "total": 2,
+      "passed": 0,
+      "metrics": {}
+    }
+  },
+  "by_difficulty": {
+    "easy": {
+      "total": 25,
+      "passed": 19
+    },
+    "medium": {
+      "total": 19,
+      "passed": 10
+    },
+    "hard": {
+      "total": 6,
+      "passed": 1
+    }
+  },
+  "test_results": [
+    {
+      "id": "TC001",
+      "query": "清蒸鲈鱼怎么做？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC002",
+      "query": "宫保鸡丁需要哪些食材？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC003",
+      "query": "没有蚝油可以用什么代替？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC004",
+      "query": "红烧肉有什么小技巧？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 0.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC005",
+      "query": "如何做一道简单的家常菜？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 0.3333333333333333,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC006",
+      "query": "外星人怎么做？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC007",
+      "query": "麻婆豆腐的正宗做法是什么？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC008",
+      "query": "糖醋鲤鱼需要什么材料？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC009",
+      "query": "小龙虾怎么处理才干净？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 0.5,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC010",
+      "query": "水煮鱼的做法",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC011",
+      "query": "可乐鸡翅怎么做？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC012",
+      "query": "做红烧鱼头需要哪些调料？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC013",
+      "query": "没有料酒可以用什么替代？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 0.3333333333333333,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC014",
+      "query": "蒸水蛋怎么才能蒸得嫩滑？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 0.75,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC015",
+      "query": "油焖大虾的详细步骤",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC016",
+      "query": "戚风蛋糕怎么做才不塌陷？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC017",
+      "query": "茶叶蛋需要煮多长时间？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 0.5,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC018",
+      "query": "做宫保鸡丁没有花生米怎么办？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC019",
+      "query": "酸梅汤怎么熬？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 0.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC020",
+      "query": "手抓饼怎么做才酥脆？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC021",
+      "query": "提拉米苏的做法",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC022",
+      "query": "葱烧海参需要什么食材？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC023",
+      "query": "做蛋糕没有低筋面粉怎么办？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC024",
+      "query": "口水鸡怎么做？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC025",
+      "query": "如何让煎饺底部金黄酥脆？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 0.3333333333333333,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC026",
+      "query": "糖醋汁怎么调？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC027",
+      "query": "蒜蓉虾要蒸多久？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC028",
+      "query": "家里没有烤箱怎么做甜点？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 0.0,
+        "citation_accuracy": 0.75,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC029",
+      "query": "波士顿大龙虾怎么做？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 0.0
+      },
+      "errors": [
+        "Expected refusal but got answer"
+      ]
+    },
+    {
+      "id": "TC030",
+      "query": "卤菜的卤水怎么配？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 0.5,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC031",
+      "query": "奶茶怎么做才好喝？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC032",
+      "query": "麻婆豆腐和家常豆腐有什么区别？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 0.5,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 0.0
+      },
+      "errors": [
+        "Expected answer but got refusal"
+      ]
+    },
+    {
+      "id": "TC033",
+      "query": "做菜时油温怎么判断？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 0.0
+      },
+      "errors": [
+        "Expected answer but got refusal"
+      ]
+    },
+    {
+      "id": "TC034",
+      "query": "哪个菜谱里用了咖喱？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 0.0,
+        "citation_accuracy": 0.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC035",
+      "query": "奥利奥冰淇淋的做法",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC036",
+      "query": "如何做一道适合减肥吃的菜？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC037",
+      "query": "啤酒鸭用什么啤酒好？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC038",
+      "query": "凉拌鸡丝需要哪些调料？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 0.75,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC039",
+      "query": "宇宙飞船怎么造？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC040",
+      "query": "红烧肉和东坡肉有什么不同？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 0.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 0.0
+      },
+      "errors": [
+        "Expected answer but got refusal"
+      ]
+    },
+    {
+      "id": "TC041",
+      "query": "草莓酱怎么保存？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC042",
+      "query": "干煎阿根廷红虾的做法",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 0.75,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC043",
+      "query": "做面包没有黄油用什么代替？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC044",
+      "query": "冬天适合喝什么热饮？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 0.3333333333333333,
+        "citation_accuracy": 0.5,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC045",
+      "query": "葱油桂鱼怎么做？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 0.75,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC046",
+      "query": "白灼虾蘸什么酱好吃？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC047",
+      "query": "哪个菜谱用到了芋头？",
+      "passed": false,
+      "metrics": {
+        "recall_at_5": 0.5,
+        "citation_accuracy": 0.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC048",
+      "query": "冰粉怎么做？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC049",
+      "query": "做菜放盐放多少合适？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    },
+    {
+      "id": "TC050",
+      "query": "火星上能种什么菜？",
+      "passed": true,
+      "metrics": {
+        "recall_at_5": 1.0,
+        "citation_accuracy": 1.0,
+        "refuse_accuracy": 1.0
+      },
+      "errors": []
+    }
+  ]
+}

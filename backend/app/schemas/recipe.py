@@ -37,6 +37,7 @@ class ChatRequest(BaseModel):
     """聊天请求"""
     query: str = Field(..., description="用户问题")
     session_id: Optional[str] = Field(None, description="会话ID")
+    image: Optional[str] = Field(None, description="Base64编码的图片数据")
 
 
 class UploadRequest(BaseModel):
@@ -54,6 +55,7 @@ class Citation(BaseModel):
     step_number: Optional[int] = Field(None, description="步骤序号")
     excerpt: str = Field(..., description="原文摘录")
     document_source: str = Field(..., description="文档来源")
+    image_path: Optional[str] = Field(None, description="相关图片路径")
 
 
 class RetrievalDetail(BaseModel):
